@@ -39,7 +39,7 @@ class BlogNode:
 
                                 """
 
-            system_message = system.prompt.format(tpoic = state['topic'])
+            system_message = system_prompt.format(topic = state['topic'])
 
             response = self.llm.invoke(system_message)
 

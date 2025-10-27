@@ -10,7 +10,7 @@ class GroqLLM:
         try:
 
             os.environ["GROQ_API_KEY"] = self.groq_api_key = os.getenv("GROQ_API_KEY")
-            llm = ChatGroq(api_key = self.groq_api_key, model = " qwen/qwen3-32b")
+            llm = ChatGroq(api_key = self.groq_api_key, model = "qwen/qwen3-32b")
 
             return llm
         

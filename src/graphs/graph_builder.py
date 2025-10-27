@@ -29,3 +29,18 @@ class GraphBuilder:
         self.graph.add_edge("content_generation", END)
 
         return self.graph
+
+    
+    def setup_graph(self, usecase):
+
+        if usecase == "topic":
+            self.build_top_graph()
+        
+        return self.graph.compile()
+
+# LangSmith LangGraph Studio
+    
+llm = GroqLLM().get_llm()
+
+graph_builder = GraphBuilder(llm)
+graph = graph_builder.build_top_graph().compile()

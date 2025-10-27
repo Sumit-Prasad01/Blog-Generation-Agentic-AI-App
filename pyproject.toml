@@ -3,11 +3,11 @@ name = "blog-generation-agentic-ai-app"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
-    "fastapi>=0.120.0",
+    "fastapi>=0.120.1",
     "langchain>=1.0.2",
-    "langchain-community>=0.4",
+    "langchain-community>=0.4.1",
     "langchain-core>=1.0.1",
     "langchain-groq>=1.0.0",
     "langgraph>=1.0.1",
