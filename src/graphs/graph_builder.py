@@ -54,7 +54,7 @@ class GraphBuilder:
 
         # Conditional edges
         self.graph.add_conditional_edges(
-            "ruote",
+            "route",
             self.blog_node_obj.route_decision,
                 {
                     "hindi" : "hindi_translation",
