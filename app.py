@@ -24,6 +24,7 @@ async def create_blogs(request : Request):
 
     data = await request.json()
     topic = data.get("topic", "")
+    language = data.get("language", "")
 
     # LLM
     groq_llm = GroqLLM()
@@ -32,11 +33,21 @@ async def create_blogs(request : Request):
     # Graph
     graph_builder = GraphBuilder(llm)
 
-    if topic:
+
+    if language and topic:
+        graph = graph_builder.setup_graph(usecase = "language")
+        state = graph.invoke({
+                                "topic" : topic,
+                                "current_language" : language.lower()
+                            })
+        
+
+    elif topic:
         graph = graph_builder.setup_graph(usecase = "topic")
         state = graph.invoke({
                                 "topic" : topic
                             })
+
 
     return  {
                 "data" : state

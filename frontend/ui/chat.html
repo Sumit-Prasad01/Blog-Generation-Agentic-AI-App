@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Blog Generator | Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gradient-to-br from-[#0a1a2f] via-[#102a43] to-[#1a3b5d] text-white overflow-hidden">
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <aside id="sidebar"
+        class="bg-[#0b1d33] min-h-screen p-4 transition-all duration-300 flex flex-col flex-shrink-0"
+        style="width: 256px;">
+        <div class="flex items-center justify-between mb-10">
+          <h1 id="sidebarTitle" class="text-2xl font-bold whitespace-nowrap transition-opacity duration-300">AI BlogGen</h1>
+          <button id="toggleSidebar"
+            class="text-white bg-[#102a43] p-2 rounded-md hover:bg-[#1a3b5d] transition flex-shrink-0">
+            ☰
+          </button>
+        </div>
+
+        <nav id="navLinks" class="space-y-4 flex-1 transition-opacity duration-300">
+          <a href="404.html" class="block py-2 px-3 rounded-md hover:bg-[#1a3b5d] whitespace-nowrap">Dashboard</a>
+          <a href="chat.html" class="block py-2 px-3 rounded-md bg-[#1a3b5d] whitespace-nowrap">Chat</a>
+          <a href="404.html" class="block py-2 px-3 rounded-md hover:bg-[#1a3b5d] whitespace-nowrap">History</a>
+          <a href="404.html" class="block py-2 px-3 rounded-md hover:bg-[#1a3b5d] whitespace-nowrap">Settings</a>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col h-screen overflow-hidden">
+        <!-- Header -->
+        <div class="p-6 pb-4">
+          <h2 class="text-3xl font-semibold text-center">💬 AI Blog Chat</h2>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="flex-1 flex flex-col px-6 pb-6 overflow-hidden">
+          <div class="flex-1 flex flex-col bg-white/10 rounded-xl border border-white/20 overflow-hidden">
+            <div id="chatBox" class="flex-1 overflow-y-auto space-y-4 p-6">
+              <div class="text-left">
+                <div class="bg-white text-[#0a1a2f] inline-block rounded-lg px-4 py-2 shadow">
+                  👋 Hello! How can I help you write today?
+                </div>
+              </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-4 bg-white/5 border-t border-white/10">
+              <div class="flex space-x-3 max-w-4xl mx-auto">
+                <input
+                  type="text"
+                  id="userInput"
+                  placeholder="Write a blog idea or message..."
+                  class="flex-1 bg-white text-[#0a1a2f] placeholder-gray-500 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                />
+                <button
+                  id="sendBtn"
+                  class="bg-white text-[#0a1a2f] font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-200 transition flex-shrink-0"
+                >
+                  Send 🚀
+                </button>
+              </div>
+              <p class="text-gray-300 text-sm text-center mt-3">
+                Type your topic and let AI generate your blog content!
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../static/script.js"></script>
+  </body>
+</html>
